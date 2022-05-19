@@ -1,0 +1,31 @@
+﻿//hands in short textual form. can be validated using https://tenhou.net/2/?q= followed by the string.
+456p111m246s1122z 1
+456p111m246s1233z 2
+457p111m246s1233z 3
+3678m22s33456899p 1
+367m22s334568899p 2
+67m22s3345668899p 1
+3677m28s33568899p 2
+589m1158s2799p12z 4
+688m2466s1222348p 2
+333m222346s678p11z 0
+3445m2478p123s123z 2
+4678m2367p114799s 2
+
+35678m289p17s1123z 3 this one is more technical. Manzu need to be disassembled like 35 678.
+
+//nearest tenpai is 7 pairs
+77m688s33568899p 1
+22m4466p12377s135z 2
+
+//special case: we have 5 groups but none are pairs so we can't count one of the pSets
+3467m2478p123s123z 3
+
+//special case 2: we have 6 groups. a completed hand can only have 5 groups.
+1145m125799p123s1z 2
+
+//13 orphans
+89m128p369s233456z 4
+89m128p3369s23345z 4
+89m128p3669s23345z 4
+889m128p369s23346z 4

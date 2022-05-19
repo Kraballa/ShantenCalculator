@@ -1,0 +1,7 @@
+﻿################################################################################
+# Diese .gitignore-Datei wurde von Microsoft(R) Visual Studio automatisch erstellt.
+################################################################################
+
+/.vs/ShantenCalculator
+/ShantenCalculator/bin/Debug/net6.0
+/ShantenCalculator/obj
