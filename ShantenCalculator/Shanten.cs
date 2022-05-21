@@ -55,28 +55,34 @@ namespace ShantenCalculator
         {
             Analysis.Scan(tiles, out int pSet, out int set, out int pairs);
 
+
+            return FromMelds(set, pSet, pairs);
+        }
+
+        public static int FromMelds(int sets, int pSets, int pairs)
+        {
             //normal shanten calculation.
-            int shanten = 8 - (pSet + pairs) - 2 * set;
+            int shanten = 8 - (pSets + pairs) - 2 * sets;
 
             //special case: 5 blocks, no pairs
-            if (pSet + set == 5 && pairs == 0)
+            if (pSets + sets == 5 && pairs == 0)
             {
                 shanten++;
             }
 
             //special case 2: 6 blocks. there cannot be 6 blocks in a completed hand so count it as 5 blocks
-            if (pSet + set + pairs >= 6)
+            if (pSets + sets + pairs >= 6)
             {
                 //5 blocks. -1 for every set. e.g. we have 2 sets and 4 partial sets. we can only count 5-2=3 partial sets
-                while (set + pSet + pairs >= 6)
+                while (sets + pSets + pairs >= 6)
                 {
-                    if (pSet > 0)
-                        pSet--;
+                    if (pSets > 0)
+                        pSets--;
                     else if (pairs > 0)
                         pairs--;
                 }
-                int normPSet = Math.Min(5 - set, pSet);
-                shanten = 8 - 2 * set - (normPSet + pairs);
+                int normPSet = Math.Min(5 - sets, pSets);
+                shanten = 8 - 2 * sets - (normPSet + pairs);
             }
             return shanten;
         }

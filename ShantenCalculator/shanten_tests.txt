@@ -1,4 +1,4 @@
-﻿//hands in short textual form. can be validated using https://tenhou.net/2/?q= followed by the string.
+﻿//boards in short textual form. can be validated using https://tenhou.net/2/?q= followed by the string.
 456p111m246s1122z 1
 456p111m246s1233z 2
 457p111m246s1233z 3
@@ -11,21 +11,42 @@
 333m222346s678p11z 0
 3445m2478p123s123z 2
 4678m2367p114799s 2
+89m128p369s233456z 4
+89m128p3369s23345z 4
+89m128p3669s23345z 4
+889m128p369s23346z 4
+147m28p13468s1235z 6 this one is funny
 
-35678m289p17s1123z 3 this one is more technical. Manzu need to be disassembled like 35 678.
+233444556m 2 //make sure it finds the 3 runs instead of the 1 set
+
+35678m289p17s1123z 3 this one is difficult because depending on how you disassemble Man tiles you end up with the wrong number
 
 //nearest tenpai is 7 pairs
 77m688s33568899p 1
 22m4466p12377s135z 2
+225588m336699p22z -1
+
+//Ryanshanten 13 orphans
+19m139p15s123456z 2
+
+//9 gates
+1112345678999s 0
+//these are problematic because of an insane recursive breadth. 
+//on the first level there are something like 28 combinations.
+//on the second there are 28 * ~20
+//on the third there are 28 * ~20 * ~12 = which is already 6700 "things" to examine
+11112345678999s -1 //111 123 456 789 99
+11122345678999s -1 //111 22 345 678 999
+11123345678999s -1 //11 123 345 678 999
+11123445678999s -1 //111 234 456 789 99
+11123455678999s -1 //111 234 55 678 999
+11123456678999s -1 //11 123 456 678 999
+11123456778999s -1 //111 234 567 789 99
+11123456788999s -1 //111 234 567 88 999
+11123456789999s -1 //11 123 456 789 999
 
 //special case: we have 5 groups but none are pairs so we can't count one of the pSets
 3467m2478p123s123z 3
 
 //special case 2: we have 6 groups. a completed hand can only have 5 groups.
 1145m125799p123s1z 2
-
-//13 orphans
-89m128p369s233456z 4
-89m128p3369s23345z 4
-89m128p3669s23345z 4
-889m128p369s23346z 4

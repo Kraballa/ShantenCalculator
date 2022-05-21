@@ -97,12 +97,25 @@ namespace ShantenCalculator
         /// </summary>
         public static int ValueMelds(ICollection<SmallMeld> melds)
         {
-            int value = 0;
+            int pairs = 0;
+            int pSets = 0;
+            int sets = 0;
             foreach (SmallMeld meld in melds)
             {
-                value += (meld.MeldType == MeldType.Set) ? 2 : 1;
+                switch (meld.MeldType)
+                {
+                    case MeldType.Set:
+                        sets++;
+                        break;
+                    case MeldType.PSet:
+                        pSets++;
+                        break;
+                    case MeldType.Pair:
+                        pairs++;
+                        break;
+                }
             }
-            return value;
+            return Shanten.FromMelds(sets, pSets, pairs);
         }
 
         /// <summary>
@@ -156,7 +169,7 @@ namespace ShantenCalculator
             }
             else //end of recursion
             {
-                if (ValueMelds(currentMelds) > ValueMelds(bestMelds))
+                if (ValueMelds(currentMelds) < ValueMelds(bestMelds))
                 {
                     bestMelds.Clear();
                     bestMelds.AddRange(currentMelds);
